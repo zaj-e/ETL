@@ -1,0 +1,323 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="bb83000a-a37b-4482-9ce4-d031b6111340" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Conductor</ID>
+  <Name>Conductor</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2917" scrolltop="-13255" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10266" y="30401" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Conductor" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3651" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000430e0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Conductor" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2917</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-13255</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="154">
+            <Shape Id="Codigo Conductor" Expanded="true">
+              <Attributes>
+                <Attribute Id="Codigo Conductor" />
+                <Attribute Id="Direccion" />
+                <Attribute Id="Fecha Ingreso" />
+                <Attribute Id="Id Conductor" />
+                <Attribute Id="Nombre" />
+                <Attribute Id="Numero Documento" />
+                <Attribute Id="Numero Licencia" />
+                <Attribute Id="Numero Telefono" />
+                <Attribute Id="Tipo Documento" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4f2041c0-2b72-4503-aeda-49626deb4ca9">
+    <DataSourceViewID>YAVA MART</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="d17bf97b-b669-450e-afe3-e557c66bfd3c">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="492837bd-ffc7-43f1-a4e8-6f9c04b86ac0">
+      <ID>Codigo Conductor</ID>
+      <Name>Codigo Conductor</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bd233877-5c00-49fe-881d-cdb5d3dc6575">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="39504ffa-5fac-4ebe-8b4e-35203fc626c9">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>CodigoConductor</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="326d5a0d-517e-4266-89d2-bcbd33aa86aa">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5e37a338-abc4-483d-8418-8af4dbbfc85a">
+          <TableID>dbo_Conductor</TableID>
+          <ColumnID>CodigoConductor</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="1213b404-78a5-44d4-b782-2d5860e3695d">
+          <AttributeID>Id Conductor</AttributeID>
+          <Name>Id Conductor</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5624cf31-f8ce-46c5-8733-0030c12bd499">
+          <AttributeID>Fecha Ingreso</AttributeID>
+          <Name>Fecha Ingreso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="12dad9b4-a988-4b62-a18c-b2f71429a6e3">
+          <AttributeID>Numero Licencia</AttributeID>
+          <Name>Numero Licencia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bd5372e0-2cb4-42de-badd-f806b12d0df8">
+          <AttributeID>Tipo Documento</AttributeID>
+          <Name>Tipo Documento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="09b75402-3de6-413d-8b96-8ca0f8854bf8">
+          <AttributeID>Numero Documento</AttributeID>
+          <Name>Numero Documento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4927d8ac-da00-4f88-a8c5-da7901ad85fe">
+          <AttributeID>Direccion</AttributeID>
+          <Name>Direccion</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bc6fbcc2-b5d9-45da-8e73-3aeddf586c67">
+          <AttributeID>Numero Telefono</AttributeID>
+          <Name>Numero Telefono</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ec235a17-d7b6-42bd-81e8-4e71381af284">
+          <AttributeID>Nombre</AttributeID>
+          <Name>Nombre</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9eb41c9c-cbb9-459b-90de-bbd5744f9474">
+      <ID>Id Conductor</ID>
+      <Name>Id Conductor</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="88564128-7f84-4ffb-9be9-e2a0bd708566">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="60d850d9-b26d-4839-bafe-9c9055c9c3ae">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>IdConductor</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ae617fc0-7513-4e8e-8d79-57a36327a5b7">
+      <ID>Fecha Ingreso</ID>
+      <Name>Fecha Ingreso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0695d6f2-c23c-47fd-8d22-f5aa3b1ce069">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="829aa0d1-465d-46f1-a7f4-a7cc674d5e4c">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>FechaIngreso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="153d3719-2398-4d3d-8688-ea7c89024350">
+      <ID>Numero Licencia</ID>
+      <Name>Numero Licencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="de6fb6e9-fe9d-4848-a5f2-67d1c468e56b">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="490db736-1362-45b6-8f00-cc8b6f5a6646">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>NumeroLicencia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6bbb8684-5960-497d-a2f7-6d0fafc7b20c">
+      <ID>Tipo Documento</ID>
+      <Name>Tipo Documento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d0fb0a93-cedd-464e-93da-c3a29784860b">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c1533b8-f0bd-45b0-821e-20098a98168b">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>TipoDocumento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8466e076-a3a5-49fb-ba42-d87c8461526d">
+      <ID>Numero Documento</ID>
+      <Name>Numero Documento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="46890257-cb0d-489d-918d-e6dea40270f5">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="46dc0264-cff8-4f7a-a093-158ea2f32098">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>NumeroDocumento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0445aad3-f955-428f-87d8-15e59e11de7b">
+      <ID>Direccion</ID>
+      <Name>Direccion</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f26c9e3-37d9-4ee1-80e2-38515207354b">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a02fc078-4d54-4a5c-84f5-1176151276b5">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>Direccion</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="80c4ec94-db5c-419c-b7fa-a0e79c5c6d23">
+      <ID>Numero Telefono</ID>
+      <Name>Numero Telefono</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="11e3b5cf-ed37-4ba0-b13e-2315589dbd74">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c4b9e2da-1dee-4de2-85ab-75e633754ecc">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>NumeroTelefono</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bac724f7-53d8-44c4-8663-371e500ce976">
+      <ID>Nombre</ID>
+      <Name>Nombre</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ba89cf41-62ad-4e42-bf50-990d267d11e4">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8178fbc4-3b10-4233-9801-a090b38c2ca5">
+            <TableID>dbo_Conductor</TableID>
+            <ColumnID>Nombre</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="9fcc217a-29bf-443f-85d5-ca8c24bdd70b">
+      <ID>Hierarchy</ID>
+      <Name>ConductoresNacionalidad</Name>
+      <Levels>
+        <Level dwd:design-time-name="b2db58b3-0a45-4e5e-a2a3-8f29c096149f">
+          <ID>Tipo Documento</ID>
+          <Name>Tipo Documento</Name>
+          <SourceAttributeID>Tipo Documento</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="a7f6551f-4359-4456-ad74-4afdeb601e34">
+          <ID>Codigo Conductor</ID>
+          <Name>Codigo Conductor</Name>
+          <SourceAttributeID>Codigo Conductor</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="ba3bbdf6-3c53-46ed-ad1e-3aeb87672c0e">
+          <ID>Nombre</ID>
+          <Name>Nombre</Name>
+          <SourceAttributeID>Nombre</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

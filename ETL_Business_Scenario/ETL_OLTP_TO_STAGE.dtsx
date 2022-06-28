@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{5F14A60A-39A3-4877-9277-707C32E4C5EF}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{51679F7F-3811-4B3B-9DE1-AEA2E4982598}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jesus\Desktop\ETL\Sources\segmento_cliente_oltp.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jesus\Desktop\ETL\Sources\segmento_cliente_oltp.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jesus\Desktop\ETL\Sources\tipo_cliente_oltp.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jesus\Desktop\ETL\Sources\tipo_cliente_oltp.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3406,11 +3406,11 @@
                       name="CodigoVehiculo" />
                     <externalMetadataColumn
                       refId="Package\Transferir Datos Servicio Courier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UbicacionRecojo]"
-                      dataType="r8"
+                      dataType="i4"
                       name="UbicacionRecojo" />
                     <externalMetadataColumn
                       refId="Package\Transferir Datos Servicio Courier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UbicacionEntrega]"
-                      dataType="r8"
+                      dataType="i4"
                       name="UbicacionEntrega" />
                     <externalMetadataColumn
                       refId="Package\Transferir Datos Servicio Courier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaRecojo]"
@@ -3430,7 +3430,7 @@
                       name="HoraEntrega" />
                     <externalMetadataColumn
                       refId="Package\Transferir Datos Servicio Courier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CalificacionServicio]"
-                      dataType="r8"
+                      dataType="i4"
                       name="CalificacionServicio" />
                     <externalMetadataColumn
                       refId="Package\Transferir Datos Servicio Courier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoPago]"
@@ -3580,9 +3580,41 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="142,42"
+          Id="Package\Carga Fechas"
+          TopLeft="1163,328" />
+        <NodeLayout
           Size="200,42"
           Id="Package\Eliminar Registros Courier"
           TopLeft="516,142" />
+        <NodeLayout
+          Size="196,49"
+          Id="Package\Tranferir Data Segmento"
+          TopLeft="907,494" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Tranferir Data Vehiculo"
+          TopLeft="335,425" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Transferir Data Cliente"
+          TopLeft="105,373" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Transferir Data Conductor"
+          TopLeft="663,355" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Transferir Data Tipo Cliente"
+          TopLeft="1033,423" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Transferir Data Tipo Pago"
+          TopLeft="511,490" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Transferir Data Ubicacion"
+          TopLeft="786,430" />
         <NodeLayout
           Size="232,42"
           Id="Package\Transferir Datos Servicio Courier"
@@ -3621,14 +3653,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Transferir Data Cliente"
-          TopLeft="105,373" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Transferir Data Conductor"
-          TopLeft="663,355" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="547.428571428571,184">
@@ -3697,18 +3721,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Tranferir Data Vehiculo"
-          TopLeft="335,425" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Transferir Data Tipo Pago"
-          TopLeft="511,490" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\Transferir Data Ubicacion"
-          TopLeft="786,430" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="574.857142857143,184">
@@ -3811,10 +3823,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Carga Fechas"
-          TopLeft="1163,328" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="688,184">
@@ -3849,14 +3857,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="196,49"
-          Id="Package\Tranferir Data Segmento"
-          TopLeft="907,494" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Transferir Data Tipo Cliente"
-          TopLeft="1033,423" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="635.2,184">
@@ -3929,32 +3929,44 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Transferir Datos Servicio Courier">
+    design-time-name="Package\Tranferir Data Segmento">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Transferir Datos Servicio Courier\Excel Source"
-          TopLeft="320,141" />
+          Size="153,42"
+          Id="Package\Tranferir Data Segmento\Origen de Excel"
+          TopLeft="372,345" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Transferir Datos Servicio Courier\OLE DB Destination"
-          TopLeft="309,323" />
+          Size="168,42"
+          Id="Package\Tranferir Data Segmento\Destino de OLE DB"
+          TopLeft="764,370" />
         <EdgeLayout
-          Id="Package\Transferir Datos Servicio Courier.Paths[Excel Source Output]"
-          TopLeft="392,183">
+          Id="Package\Tranferir Data Segmento.Paths[Salida de origen de Excel]"
+          TopLeft="525,366">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,140"
+              EndConnector="239,25"
               Start="0,0"
-              End="0,132.5">
+              End="231.5,25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,132.5" />
+                    End="115.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115.5,0"
+                    Point2="119.5,0"
+                    Point3="119.5,4" />
+                  <mssgle:LineSegment
+                    End="119.5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.5,21"
+                    Point2="119.5,25"
+                    Point3="123.5,25" />
+                  <mssgle:LineSegment
+                    End="231.5,25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3967,7 +3979,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Transferir Datos Servicio Courier\Excel Source">
+    design-time-name="Package\Tranferir Data Segmento\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3980,7 +3992,83 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Transferir Datos Servicio Courier\OLE DB Destination">
+    design-time-name="Package\Tranferir Data Segmento\Origen de Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Tranferir Data Vehiculo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Tranferir Data Vehiculo\Destino Vehiculo"
+          TopLeft="578,218" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Tranferir Data Vehiculo\Fuente Vehiculo"
+          TopLeft="119,208" />
+        <EdgeLayout
+          Id="Package\Tranferir Data Vehiculo.Paths[Salida de origen de OLE DB]"
+          TopLeft="273,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="305,10"
+              Start="0,0"
+              End="297.5,10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="148.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="148.5,0"
+                    Point2="152.5,0"
+                    Point3="152.5,4" />
+                  <mssgle:LineSegment
+                    End="152.5,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.5,6"
+                    Point2="152.5,10"
+                    Point3="156.5,10" />
+                  <mssgle:LineSegment
+                    End="297.5,10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tranferir Data Vehiculo\Destino Vehiculo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tranferir Data Vehiculo\Fuente Vehiculo">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4043,7 +4131,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Cliente\Cliente Fuente">
+    design-time-name="Package\Transferir Data Cliente\Cliente Destino">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4056,7 +4144,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Cliente\Cliente Destino">
+    design-time-name="Package\Transferir Data Cliente\Cliente Fuente">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4107,19 +4195,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Conductor\Fuente Conductor">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Transferir Data Conductor\Destino Conductor">
     <Properties>
       <Property>
@@ -4132,134 +4207,8 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Tranferir Data Vehiculo">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Tranferir Data Vehiculo\Destino Vehiculo"
-          TopLeft="578,218" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Tranferir Data Vehiculo\Fuente Vehiculo"
-          TopLeft="119,208" />
-        <EdgeLayout
-          Id="Package\Tranferir Data Vehiculo.Paths[Salida de origen de OLE DB]"
-          TopLeft="273,229">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="305,10"
-              Start="0,0"
-              End="297.5,10">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="148.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="148.5,0"
-                    Point2="152.5,0"
-                    Point3="152.5,4" />
-                  <mssgle:LineSegment
-                    End="152.5,6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="152.5,6"
-                    Point2="152.5,10"
-                    Point3="156.5,10" />
-                  <mssgle:LineSegment
-                    End="297.5,10" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Transferir Data Tipo Pago">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Transferir Data Tipo Pago\Destino Tipo Pago"
-          TopLeft="589,235" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Transferir Data Tipo Pago\Fuente Tipo Pago"
-          TopLeft="191,234" />
-        <EdgeLayout
-          Id="Package\Transferir Data Tipo Pago.Paths[Salida de origen de OLE DB]"
-          TopLeft="352,255.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="237,0"
-              Start="0,0"
-              End="229.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="229.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Transferir Data Ubicacion">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Transferir Data Ubicacion\Fuente Ubicacion"
-          TopLeft="200,283" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Transferir Data Ubicacion\Destino Ubicacion"
-          TopLeft="579,289" />
-        <EdgeLayout
-          Id="Package\Transferir Data Ubicacion.Paths[Salida de origen de OLE DB]"
-          TopLeft="360,307">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="219,0"
-              Start="0,0"
-              End="211.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="211.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tranferir Data Vehiculo\Destino Vehiculo">
+    design-time-name="Package\Transferir Data Conductor\Fuente Conductor">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4271,121 +4220,6 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tranferir Data Vehiculo\Fuente Vehiculo">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Tipo Pago\Destino Tipo Pago">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Tipo Pago\Fuente Tipo Pago">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Ubicacion\Fuente Ubicacion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Ubicacion\Destino Ubicacion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Tranferir Data Segmento">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Tranferir Data Segmento\Origen de Excel"
-          TopLeft="372,345" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Tranferir Data Segmento\Destino de OLE DB"
-          TopLeft="764,370" />
-        <EdgeLayout
-          Id="Package\Tranferir Data Segmento.Paths[Salida de origen de Excel]"
-          TopLeft="525,366">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="239,25"
-              Start="0,0"
-              End="231.5,25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="115.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115.5,0"
-                    Point2="119.5,0"
-                    Point3="119.5,4" />
-                  <mssgle:LineSegment
-                    End="119.5,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="119.5,21"
-                    Point2="119.5,25"
-                    Point3="123.5,25" />
-                  <mssgle:LineSegment
-                    End="231.5,25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <TaskHost
     design-time-name="Package\Transferir Data Tipo Cliente">
     <LayoutInfo>
@@ -4425,20 +4259,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tranferir Data Segmento\Origen de Excel">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tranferir Data Segmento\Destino de OLE DB">
+    design-time-name="Package\Transferir Data Tipo Cliente\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4463,8 +4284,187 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Transferir Data Tipo Pago">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Transferir Data Tipo Pago\Destino Tipo Pago"
+          TopLeft="589,235" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Transferir Data Tipo Pago\Fuente Tipo Pago"
+          TopLeft="191,234" />
+        <EdgeLayout
+          Id="Package\Transferir Data Tipo Pago.Paths[Salida de origen de OLE DB]"
+          TopLeft="352,255.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="237,0"
+              Start="0,0"
+              End="229.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="229.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Transferir Data Tipo Cliente\Destino de OLE DB">
+    design-time-name="Package\Transferir Data Tipo Pago\Destino Tipo Pago">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir Data Tipo Pago\Fuente Tipo Pago">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Transferir Data Ubicacion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Transferir Data Ubicacion\Fuente Ubicacion"
+          TopLeft="200,283" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Transferir Data Ubicacion\Destino Ubicacion"
+          TopLeft="579,289" />
+        <EdgeLayout
+          Id="Package\Transferir Data Ubicacion.Paths[Salida de origen de OLE DB]"
+          TopLeft="360,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="219,0"
+              Start="0,0"
+              End="211.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="211.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir Data Ubicacion\Destino Ubicacion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir Data Ubicacion\Fuente Ubicacion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Transferir Datos Servicio Courier">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Transferir Datos Servicio Courier\Excel Source"
+          TopLeft="320,141" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Transferir Datos Servicio Courier\OLE DB Destination"
+          TopLeft="302,472" />
+        <EdgeLayout
+          Id="Package\Transferir Datos Servicio Courier.Paths[Excel Source Output]"
+          TopLeft="388.5,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,289"
+              Start="0,0"
+              End="0,281.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,281.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir Datos Servicio Courier\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir Datos Servicio Courier\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

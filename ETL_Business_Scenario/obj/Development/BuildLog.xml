@@ -8,12 +8,12 @@
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL_OLTP_TO_STAGE.dtsx</Name>
-      <LastWriteTime>2022-06-28T16:16:00.6979194Z</LastWriteTime>
+      <LastWriteTime>2022-06-28T18:06:46.2748971Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ETL_STAGE_TO_MART.dtsx</Name>
-      <LastWriteTime>2022-06-28T16:35:03.0092078Z</LastWriteTime>
+      <LastWriteTime>2022-06-28T18:07:57.2346789Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

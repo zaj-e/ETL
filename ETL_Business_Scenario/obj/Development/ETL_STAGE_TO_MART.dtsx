@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{6537601C-3169-4872-820A-8B7E3356D844}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{78E5687D-8166-4D67-A3A6-3EC3FC160313}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1537,11 +1537,11 @@ where [refTable].[Codigo] = ?</property>
                       name="CodigoVehiculo" />
                     <externalMetadataColumn
                       refId="Package\Courier\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[UbicacionRecojo]"
-                      dataType="r8"
+                      dataType="i4"
                       name="UbicacionRecojo" />
                     <externalMetadataColumn
                       refId="Package\Courier\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[UbicacionEntrega]"
-                      dataType="r8"
+                      dataType="i4"
                       name="UbicacionEntrega" />
                     <externalMetadataColumn
                       refId="Package\Courier\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[FechaRecojo]"
@@ -1561,7 +1561,7 @@ where [refTable].[Codigo] = ?</property>
                       name="HoraEntrega" />
                     <externalMetadataColumn
                       refId="Package\Courier\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CalificacionServicio]"
-                      dataType="r8"
+                      dataType="i4"
                       name="CalificacionServicio" />
                     <externalMetadataColumn
                       refId="Package\Courier\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[TipoPago]"
@@ -1847,11 +1847,11 @@ where [refTable].[Codigo] = ?</property>
                       name="CodigoVehiculo" />
                     <externalMetadataColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[UbicacionRecojo]"
-                      dataType="r8"
+                      dataType="i4"
                       name="UbicacionRecojo" />
                     <externalMetadataColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[UbicacionEntrega]"
-                      dataType="r8"
+                      dataType="i4"
                       name="UbicacionEntrega" />
                     <externalMetadataColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaRecojo]"
@@ -1871,7 +1871,7 @@ where [refTable].[Codigo] = ?</property>
                       name="HoraEntrega" />
                     <externalMetadataColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CalificacionServicio]"
-                      dataType="r8"
+                      dataType="i4"
                       name="CalificacionServicio" />
                     <externalMetadataColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[TipoPago]"
@@ -1927,12 +1927,12 @@ where [refTable].[Codigo] = ?</property>
                       name="CodigoVehiculo" />
                     <outputColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UbicacionRecojo]"
-                      dataType="r8"
+                      dataType="i4"
                       lineageId="Package\Courier\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UbicacionRecojo]"
                       name="UbicacionRecojo" />
                     <outputColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UbicacionEntrega]"
-                      dataType="r8"
+                      dataType="i4"
                       lineageId="Package\Courier\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UbicacionEntrega]"
                       name="UbicacionEntrega" />
                     <outputColumn
@@ -1957,7 +1957,7 @@ where [refTable].[Codigo] = ?</property>
                       name="HoraEntrega" />
                     <outputColumn
                       refId="Package\Courier\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CalificacionServicio]"
-                      dataType="r8"
+                      dataType="i4"
                       lineageId="Package\Courier\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CalificacionServicio]"
                       name="CalificacionServicio" />
                     <outputColumn
@@ -3489,9 +3489,29 @@ where [refTable].[Codigo] = ?</property>
           Id="Package\Cliente"
           TopLeft="54,180" />
         <NodeLayout
+          Size="127,42"
+          Id="Package\Conductor"
+          TopLeft="208,228" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Courier"
+          TopLeft="683,237" />
+        <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
           TopLeft="253,53" />
+        <NodeLayout
+          Size="111,42"
+          Id="Package\Fechas"
+          TopLeft="532,235" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Ubicacion"
+          TopLeft="371,236" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\Vehiculo"
+          TopLeft="247,353" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="308.666666666667,95">
@@ -3526,22 +3546,6 @@ where [refTable].[Codigo] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Conductor"
-          TopLeft="208,228" />
-        <NodeLayout
-          Size="118,42"
-          Id="Package\Vehiculo"
-          TopLeft="247,353" />
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Ubicacion"
-          TopLeft="371,236" />
-        <NodeLayout
-          Size="111,42"
-          Id="Package\Fechas"
-          TopLeft="532,235" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="360.333333333333,95">
@@ -3678,10 +3682,6 @@ where [refTable].[Codigo] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Courier"
-          TopLeft="683,237" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="386.166666666667,95">
@@ -3850,7 +3850,30 @@ where [refTable].[Codigo] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Cliente\Origen de OLE DB">
+    design-time-name="Package\Cliente\Búsqueda Segmento">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[STG_Segmento]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cliente\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3863,35 +3886,12 @@ where [refTable].[Codigo] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Cliente\Búsqueda Segmento">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[STG_Segmento]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Cliente\Busqueda Tipo Cliente">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3901,7 +3901,7 @@ where [refTable].[Codigo] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3909,7 +3909,7 @@ where [refTable].[Codigo] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Cliente\Destino de OLE DB">
+    design-time-name="Package\Cliente\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3998,44 +3998,44 @@ where [refTable].[Codigo] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Vehiculo">
+    design-time-name="Package\Courier">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="164,42"
-          Id="Package\Vehiculo\Origen de OLE DB"
-          TopLeft="139,336" />
+          Id="Package\Courier\Origen de OLE DB"
+          TopLeft="84,203" />
         <NodeLayout
           Size="168,42"
-          Id="Package\Vehiculo\Destino de OLE DB"
-          TopLeft="675,361" />
+          Id="Package\Courier\Destino de OLE DB"
+          TopLeft="631,233" />
         <EdgeLayout
-          Id="Package\Vehiculo.Paths[Salida de origen de OLE DB]"
-          TopLeft="303,357">
+          Id="Package\Courier.Paths[Salida de origen de OLE DB]"
+          TopLeft="248,224">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="372,25"
+              EndConnector="383,30"
               Start="0,0"
-              End="364.5,25">
+              End="375.5,30">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="182,0" />
+                    End="187.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="182,0"
-                    Point2="186,0"
-                    Point3="186,4" />
+                    Point1="187.5,0"
+                    Point2="191.5,0"
+                    Point3="191.5,4" />
                   <mssgle:LineSegment
-                    End="186,21" />
+                    End="191.5,26" />
                   <mssgle:CubicBezierSegment
-                    Point1="186,21"
-                    Point2="186,25"
-                    Point3="190,25" />
+                    Point1="191.5,26"
+                    Point2="191.5,30"
+                    Point3="195.5,30" />
                   <mssgle:LineSegment
-                    End="364.5,25" />
+                    End="375.5,30" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4048,7 +4048,7 @@ where [refTable].[Codigo] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Vehiculo\Origen de OLE DB">
+    design-time-name="Package\Courier\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4061,83 +4061,7 @@ where [refTable].[Codigo] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Vehiculo\Destino de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Ubicacion">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Ubicacion\Origen de OLE DB"
-          TopLeft="207,346" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Ubicacion\Destino de OLE DB"
-          TopLeft="600,326" />
-        <EdgeLayout
-          Id="Package\Ubicacion.Paths[Salida de origen de OLE DB]"
-          TopLeft="371,367">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="229,-20"
-              Start="0,0"
-              End="221.5,-20">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="110.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="110.5,0"
-                    Point2="114.5,0"
-                    Point3="114.5,-4" />
-                  <mssgle:LineSegment
-                    End="114.5,-16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.5,-16"
-                    Point2="114.5,-20"
-                    Point3="118.5,-20" />
-                  <mssgle:LineSegment
-                    End="221.5,-20" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ubicacion\Origen de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ubicacion\Destino de OLE DB">
+    design-time-name="Package\Courier\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4200,19 +4124,6 @@ where [refTable].[Codigo] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fechas\Origen de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Fechas\Destino de OLE DB">
     <Properties>
       <Property>
@@ -4225,45 +4136,58 @@ where [refTable].[Codigo] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fechas\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Courier">
+    design-time-name="Package\Ubicacion">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="164,42"
-          Id="Package\Courier\Origen de OLE DB"
-          TopLeft="84,203" />
+          Id="Package\Ubicacion\Origen de OLE DB"
+          TopLeft="207,346" />
         <NodeLayout
           Size="168,42"
-          Id="Package\Courier\Destino de OLE DB"
-          TopLeft="631,233" />
+          Id="Package\Ubicacion\Destino de OLE DB"
+          TopLeft="600,326" />
         <EdgeLayout
-          Id="Package\Courier.Paths[Salida de origen de OLE DB]"
-          TopLeft="248,224">
+          Id="Package\Ubicacion.Paths[Salida de origen de OLE DB]"
+          TopLeft="371,367">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="383,30"
+              EndConnector="229,-20"
               Start="0,0"
-              End="375.5,30">
+              End="221.5,-20">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="187.5,0" />
+                    End="110.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="187.5,0"
-                    Point2="191.5,0"
-                    Point3="191.5,4" />
+                    Point1="110.5,0"
+                    Point2="114.5,0"
+                    Point3="114.5,-4" />
                   <mssgle:LineSegment
-                    End="191.5,26" />
+                    End="114.5,-16" />
                   <mssgle:CubicBezierSegment
-                    Point1="191.5,26"
-                    Point2="191.5,30"
-                    Point3="195.5,30" />
+                    Point1="114.5,-16"
+                    Point2="114.5,-20"
+                    Point3="118.5,-20" />
                   <mssgle:LineSegment
-                    End="375.5,30" />
+                    End="221.5,-20" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4276,7 +4200,7 @@ where [refTable].[Codigo] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Courier\Origen de OLE DB">
+    design-time-name="Package\Ubicacion\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4289,7 +4213,83 @@ where [refTable].[Codigo] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Courier\Destino de OLE DB">
+    design-time-name="Package\Ubicacion\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Vehiculo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Vehiculo\Origen de OLE DB"
+          TopLeft="139,336" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Vehiculo\Destino de OLE DB"
+          TopLeft="675,361" />
+        <EdgeLayout
+          Id="Package\Vehiculo.Paths[Salida de origen de OLE DB]"
+          TopLeft="303,357">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="372,25"
+              Start="0,0"
+              End="364.5,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="182,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182,0"
+                    Point2="186,0"
+                    Point3="186,4" />
+                  <mssgle:LineSegment
+                    End="186,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="186,21"
+                    Point2="186,25"
+                    Point3="190,25" />
+                  <mssgle:LineSegment
+                    End="364.5,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vehiculo\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vehiculo\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
