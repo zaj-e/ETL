@@ -1,0 +1,855 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/27/2022 10:09:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EXTRAPOLARA"
+  DTS:CreatorName="EXTRAPOLARA\Marcelo"
+  DTS:DTSID="{EF8175B9-B7AC-451B-9ABC-AAA639FE9219}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{CC75C2AA-541F-4F9E-BFFA-205B8D4AA23F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{66476DAE-86D4-4EB7-AF57-E274EC5E7815}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Marcelo\Documents\repos\ETL\registro_courier_oltp.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Eliminar Registros Courier"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{611B71A9-167B-4A03-B430-D817894EFF5A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Eliminar Registros Courier"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1CA11911-E341-40A3-A0CD-4CFB461B2A67}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE FAC_Courier" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transferir datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{93C306F5-5939-4ACC-81B5-E4322D62808D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transferir datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transferir datos\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Hoja1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transferir datos\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoServicioCourier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoServicioCourier]"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoServicioCourier]"
+                      name="CodigoServicioCourier"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoCliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoCliente]"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoCliente]"
+                      name="CodigoCliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoConductor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoConductor]"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoConductor]"
+                      name="CodigoConductor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoVehiculo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoVehiculo]"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoVehiculo]"
+                      name="CodigoVehiculo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[UbicacionRecojo]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[UbicacionRecojo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[UbicacionRecojo]"
+                      name="UbicacionRecojo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[UbicacionEntrega]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[UbicacionEntrega]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[UbicacionEntrega]"
+                      name="UbicacionEntrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[FechaRecojo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[FechaRecojo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[FechaRecojo]"
+                      name="FechaRecojo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[HoraRecojo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[HoraRecojo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[HoraRecojo]"
+                      name="HoraRecojo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[FechaEntrega]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[FechaEntrega]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[FechaEntrega]"
+                      name="FechaEntrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[HoraEntrega]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[HoraEntrega]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[HoraEntrega]"
+                      name="HoraEntrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CalificacionServicio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CalificacionServicio]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CalificacionServicio]"
+                      name="CalificacionServicio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[TipoPago]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[TipoPago]"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[TipoPago]"
+                      name="TipoPago"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CostoServicio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CostoServicio]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CostoServicio]"
+                      name="CostoServicio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[ComisionConductor]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[ComisionConductor]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[ComisionConductor]"
+                      name="ComisionConductor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[Descuento]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[Descuento]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[Descuento]"
+                      name="Descuento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[PagoFinal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[PagoFinal]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[PagoFinal]"
+                      name="PagoFinal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoServicioCourier]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoServicioCourier" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoCliente]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoConductor]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoConductor" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CodigoVehiculo]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoVehiculo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[UbicacionRecojo]"
+                      dataType="r8"
+                      name="UbicacionRecojo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[UbicacionEntrega]"
+                      dataType="r8"
+                      name="UbicacionEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[FechaRecojo]"
+                      dataType="date"
+                      name="FechaRecojo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[HoraRecojo]"
+                      dataType="date"
+                      name="HoraRecojo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[FechaEntrega]"
+                      dataType="date"
+                      name="FechaEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[HoraEntrega]"
+                      dataType="date"
+                      name="HoraEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CalificacionServicio]"
+                      dataType="r8"
+                      name="CalificacionServicio" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[TipoPago]"
+                      dataType="wstr"
+                      length="255"
+                      name="TipoPago" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[CostoServicio]"
+                      dataType="r8"
+                      name="CostoServicio" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[ComisionConductor]"
+                      dataType="r8"
+                      name="ComisionConductor" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[Descuento]"
+                      dataType="r8"
+                      name="Descuento" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].ExternalColumns[PagoFinal]"
+                      dataType="r8"
+                      name="PagoFinal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoServicioCourier]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoServicioCourier]"
+                      name="CodigoServicioCourier" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoCliente]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoCliente]"
+                      name="CodigoCliente" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoConductor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoConductor]"
+                      name="CodigoConductor" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoVehiculo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CodigoVehiculo]"
+                      name="CodigoVehiculo" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[UbicacionRecojo]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[UbicacionRecojo]"
+                      name="UbicacionRecojo" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[UbicacionEntrega]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[UbicacionEntrega]"
+                      name="UbicacionEntrega" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[FechaRecojo]"
+                      dataType="date"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[FechaRecojo]"
+                      name="FechaRecojo" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[HoraRecojo]"
+                      dataType="date"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[HoraRecojo]"
+                      name="HoraRecojo" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[FechaEntrega]"
+                      dataType="date"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[FechaEntrega]"
+                      name="FechaEntrega" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[HoraEntrega]"
+                      dataType="date"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[HoraEntrega]"
+                      name="HoraEntrega" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CalificacionServicio]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CalificacionServicio]"
+                      name="CalificacionServicio" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[TipoPago]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[TipoPago]"
+                      name="TipoPago" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CostoServicio]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[CostoServicio]"
+                      name="CostoServicio" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[ComisionConductor]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[ComisionConductor]"
+                      name="ComisionConductor" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[Descuento]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[Descuento]"
+                      name="Descuento" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[PagoFinal]"
+                      dataType="r8"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[PagoFinal]"
+                      name="PagoFinal" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transferir datos\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fac_Courier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transferir datos\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{1CA11911-E341-40A3-A0CD-4CFB461B2A67}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.TF_Funda]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CodigoServicioCourier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CodigoServicioCourier"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoServicioCourier]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoServicioCourier]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CodigoCliente]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CodigoCliente"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoCliente]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoCliente]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CodigoConductor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CodigoConductor"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoConductor]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoConductor]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CodigoVehiculo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CodigoVehiculo"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoVehiculo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CodigoVehiculo]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UbicacionRecojo]"
+                      cachedDataType="r8"
+                      cachedName="UbicacionRecojo"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UbicacionRecojo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[UbicacionRecojo]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UbicacionEntrega]"
+                      cachedDataType="r8"
+                      cachedName="UbicacionEntrega"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UbicacionEntrega]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[UbicacionEntrega]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FechaRecojo]"
+                      cachedDataType="date"
+                      cachedName="FechaRecojo"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaRecojo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[FechaRecojo]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HoraRecojo]"
+                      cachedDataType="date"
+                      cachedName="HoraRecojo"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HoraRecojo]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[HoraRecojo]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FechaEntrega]"
+                      cachedDataType="date"
+                      cachedName="FechaEntrega"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaEntrega]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[FechaEntrega]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HoraEntrega]"
+                      cachedDataType="date"
+                      cachedName="HoraEntrega"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HoraEntrega]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[HoraEntrega]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CalificacionServicio]"
+                      cachedDataType="r8"
+                      cachedName="CalificacionServicio"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CalificacionServicio]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CalificacionServicio]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TipoPago]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TipoPago"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoPago]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[TipoPago]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CostoServicio]"
+                      cachedDataType="r8"
+                      cachedName="CostoServicio"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostoServicio]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[CostoServicio]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComisionConductor]"
+                      cachedDataType="r8"
+                      cachedName="ComisionConductor"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComisionConductor]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[ComisionConductor]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Descuento]"
+                      cachedDataType="r8"
+                      cachedName="Descuento"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descuento]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[Descuento]" />
+                    <inputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PagoFinal]"
+                      cachedDataType="r8"
+                      cachedName="PagoFinal"
+                      externalMetadataColumnId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PagoFinal]"
+                      lineageId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output].Columns[PagoFinal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoServicioCourier]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoServicioCourier" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoCliente]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoConductor]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoConductor" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoVehiculo]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoVehiculo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UbicacionRecojo]"
+                      dataType="r8"
+                      name="UbicacionRecojo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UbicacionEntrega]"
+                      dataType="r8"
+                      name="UbicacionEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaRecojo]"
+                      dataType="dbTimeStamp"
+                      name="FechaRecojo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HoraRecojo]"
+                      dataType="dbTimeStamp"
+                      name="HoraRecojo" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaEntrega]"
+                      dataType="dbTimeStamp"
+                      name="FechaEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HoraEntrega]"
+                      dataType="dbTimeStamp"
+                      name="HoraEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CalificacionServicio]"
+                      dataType="r8"
+                      name="CalificacionServicio" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoPago]"
+                      dataType="wstr"
+                      length="255"
+                      name="TipoPago" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostoServicio]"
+                      dataType="r8"
+                      name="CostoServicio" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComisionConductor]"
+                      dataType="r8"
+                      name="ComisionConductor" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descuento]"
+                      dataType="r8"
+                      name="Descuento" />
+                    <externalMetadataColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PagoFinal]"
+                      dataType="r8"
+                      name="PagoFinal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transferir datos\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transferir datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transferir datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transferir datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transferir datos.Paths[Excel Source Output]"
+              endId="Package\Transferir datos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Transferir datos\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F12455C-D64C-4F89-9CE8-63A168F3C99A}"
+      DTS:From="Package\Eliminar Registros Courier"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transferir datos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Transferir datos"
+          TopLeft="379,168" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Eliminar Registros Courier"
+          TopLeft="357,67" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="456.25,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transferir datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Transferir datos\Excel Source"
+          TopLeft="316,135" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Transferir datos\OLE DB Destination"
+          TopLeft="298,292" />
+        <EdgeLayout
+          Id="Package\Transferir datos.Paths[Excel Source Output]"
+          TopLeft="384.5,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,115"
+              Start="0,0"
+              End="0,107.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,107.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.56447265625,48.96337890625,41.1289453125,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir datos\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transferir datos\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
