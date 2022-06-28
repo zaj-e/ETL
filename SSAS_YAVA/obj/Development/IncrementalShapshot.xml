@@ -68,7 +68,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>BMv5W/un8MIcQoULn1V+mB6A3Lk=28/06/2022 13:31:1228/06/2022 13:31:12K/PzboTmNriMI+TBoOaqKbxRY50=28/06/2022 13:31:1228/06/2022 13:31:12</TimeStamp>
+        <TimeStamp>yRvGuaKuIhLPtq53EjKVBRfB0gU=28/06/2022 16:44:5228/06/2022 16:39:36/HolUGvg9aATw2Mosn9OEg7CDiA=28/06/2022 16:41:5828/06/2022 16:39:36</TimeStamp>
         <ID>
           <String>CUBE_YAVA</String>
         </ID>
@@ -85,5 +85,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-06-28T18:40:10.463333Z</LastDeployed>
+  <LastDeployed>2022-06-28T21:44:58.466667Z</LastDeployed>
 </DeploymentSnapshot>
