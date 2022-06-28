@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.TF_Funda"
-  DTS:DTSID="{1CA11911-E341-40A3-A0CD-4CFB461B2A67}"
+  DTS:ObjectName="LocalHost.YAVA_OLTP"
+  DTS:DTSID="{6A9680A8-3F8C-4C5D-B224-5955F30AAD42}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=.;Initial Catalog=BDCitasMedicas_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=.;Initial Catalog=YAVA_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

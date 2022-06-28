@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETL_Business_Scenario</Name>
-    <LastWriteTime>2022-06-28T04:41:37.4155378Z</LastWriteTime>
+    <LastWriteTime>2022-06-28T15:52:19.488967Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2022-06-28T04:41:32.4471036Z</LastWriteTime>
+      <Name>ETL_OLTP_TO_STAGE.dtsx</Name>
+      <LastWriteTime>2022-06-28T16:16:00.6979194Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>ETL_Stage.dtsx</Name>
-      <LastWriteTime>2022-06-28T04:41:32.5941026Z</LastWriteTime>
+      <Name>ETL_STAGE_TO_MART.dtsx</Name>
+      <LastWriteTime>2022-06-28T16:35:03.0092078Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

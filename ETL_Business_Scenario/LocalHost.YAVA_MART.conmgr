@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.YAVA_MART"
+  DTS:DTSID="{8CD16D1E-F1B0-4C01-A974-443782773469}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=YAVA_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

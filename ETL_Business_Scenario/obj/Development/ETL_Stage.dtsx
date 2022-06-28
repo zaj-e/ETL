@@ -7,12 +7,12 @@
   DTS:CreatorName="EXTRAPOLARA\Marcelo"
   DTS:DTSID="{EF8175B9-B7AC-451B-9ABC-AAA639FE9219}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{30D9C7C7-95DE-46F8-8057-CC989B14F741}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{5879B533-86EA-4C45-8ADC-1E87AFE9162C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,19 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Marcelo\Documents\repos\ETL\Sources\registro_courier_oltp.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jesus\Desktop\ETL\Sources\registro_courier_oltp.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.YAVA_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3F51841A-4483-469C-AA70-85476C292382}"
+      DTS:ObjectName="LocalHost.YAVA_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=YAVA_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -45,7 +57,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1CA11911-E341-40A3-A0CD-4CFB461B2A67}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE FAC_Courier" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Fac_Courier')&#xA;&#xA;begin&#xA;&#xA;    TRUNCATE table Fac_Courier;&#xA;&#xA;end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -87,7 +99,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -461,7 +473,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Fac_Courier]</property>
+                  name="OpenRowset">[Fac_Courier]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -470,7 +482,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -487,7 +499,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
+                  name="FastLoadKeepIdentity">true</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
@@ -504,8 +516,8 @@
               <connections>
                 <connection
                   refId="Package\Transferir datos\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{1CA11911-E341-40A3-A0CD-4CFB461B2A67}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.TF_Funda]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.YAVA_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.YAVA_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -753,13 +765,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153,42"
-          Id="Package\Transferir datos"
-          TopLeft="379,168" />
-        <NodeLayout
           Size="200,42"
           Id="Package\Eliminar Registros Courier"
           TopLeft="357,67" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Transferir datos"
+          TopLeft="379,168" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="456.25,109">
@@ -793,25 +805,25 @@
         <NodeLayout
           Size="139,42"
           Id="Package\Transferir datos\Excel Source"
-          TopLeft="316,135" />
+          TopLeft="320,141" />
         <NodeLayout
           Size="171,42"
           Id="Package\Transferir datos\OLE DB Destination"
-          TopLeft="298,292" />
+          TopLeft="309,323" />
         <EdgeLayout
           Id="Package\Transferir datos.Paths[Excel Source Output]"
-          TopLeft="384.5,177">
+          TopLeft="392,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,115"
+              EndConnector="0,140"
               Start="0,0"
-              End="0,107.5">
+              End="0,132.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,107.5" />
+                    End="0,132.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
