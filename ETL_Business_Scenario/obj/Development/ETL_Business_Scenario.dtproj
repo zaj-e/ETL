@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">EXTRAPOLARA</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdNYUFK2qS0C5Dz5tHhzo8wAAAAACAAAAAAAQZgAAAAEAACAAAADaeeDggio7oYTAkV+8NIdPhtD1VZc+GIcPON0Vq4F5NwAAAAAOgAAAAAIAACAAAADB9Yyq1xpnjZBYjwgBvXUn5yejekzZhlJlQ94hnEqbdpAAAADZSswuIXTfgfp5G6O51Sp8sOn4tiwk9xgrYbVmdzq5py719Uy8hnLorbf2NZtqJwBuUpOkmoDPimeDOjxu5tuhtxWUl8aAI/LkwhbfuULb22D1FWkGrBxmJulJvcAkpJaM7/KeiHZIhQT6XpPhmpqjJBBwqlQjAVlFl6/DvD11dX6jnfQT/cUUgSYup36Iwu1AAAAA+KMA0lFasUI/pf3PRCDnUqCOG+/gT9NRjHYjbUmugiiCPfK8YgKkgKGuiPuq0QE+NUrE65CtbHSM/jruc1Q+ug==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdNYUFK2qS0C5Dz5tHhzo8wAAAAACAAAAAAAQZgAAAAEAACAAAACGTW0nzLWVSQ+eRG4R5OaTb5hEsH/FamM7SqpzAup3ZQAAAAAOgAAAAAIAACAAAAAuRJps8RoJzM9HyieNpW5+UVspdpdmqMol9LQb1CU6/pAAAADAR9jPdTOe+q2s56f9uXoy/Qk2S/mztnbdoLkNAZm37SM/G5LvLLF8XSoKCYMrzg3O/UkKSOka3ssEdeRUg98Y/DgXNNI9fXoQ1KPPW6vGu5Vrshgdu4JFJ4WySUFMs8XzMcjZAnhMu6ecCyBwHXM9a2gGM3S6Oly7FVwXMpaYLh6rPyUeoR6Udkw4BRQoJS9AAAAAi4HCkgJd2+fpheIpbdmRkqs3DNkVDFw6v9vLHChtPw5ufoUdKAtLnrRHJOQGRNU/JH8KrX5IFIV3Is33gw0UcQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -197,7 +197,7 @@
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D6400896-C0DA-493D-B9C0-B64D98290BC5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6ED2744D-A99D-4816-A0BB-3595515D0FCE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -211,10 +211,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F091549C-C45B-4513-9749-D078435D8B67}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{30D9C7C7-95DE-46F8-8057-CC989B14F741}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -247,7 +247,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Marcelo\Documents\repos\ETL\registro_courier_oltp.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Marcelo\Documents\repos\ETL\Sources\registro_courier_oltp.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -262,7 +262,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Marcelo\Documents\repos\ETL\registro_courier_oltp.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Marcelo\Documents\repos\ETL\Sources\registro_courier_oltp.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -335,7 +335,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Marcelo\Documents\repos\ETL\registro_courier_oltp.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Marcelo\Documents\repos\ETL\Sources\registro_courier_oltp.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -371,7 +371,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2022</TargetServerVersion>
+        <TargetServerVersion>SQLServer2019</TargetServerVersion>
         <AzureMode>false</AzureMode>
         <LinkedAzureTenantId />
         <LinkedAzureAccountId />

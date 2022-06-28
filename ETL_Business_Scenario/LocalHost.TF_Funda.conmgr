@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="LocalHost.TF_Funda"
   DTS:DTSID="{1CA11911-E341-40A3-A0CD-4CFB461B2A67}"
